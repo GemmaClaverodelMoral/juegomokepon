@@ -23,5 +23,7 @@ Si ,o deseas probar debes descargarlo a tu computador, y desde la raiz del direc
     <img src="https://github.com/GemmaClaverodelMoral/juegomokepon/blob/master/public/assets/mokeponpantallainicio.png">
   </div>
   Enlace al video demostracion:
-  https://youtu.be/jGJeAIJpbDY
-  9. Al acabar apaga las escuchas del servidor con ctrl + C
+  <br/>
+  - [SIMULACION JUEGO MOKEPON] <br/> 
+  - [https://youtu.be/jGJeAIJpbDY](https://youtu.be/t7RxgL8aQxs) <br/>
+  9. Al acabar, desde la linea de comandos del terminal, apaga las escuchas del servidor con ctrl + C. 
