@@ -17,8 +17,11 @@ Si ,o deseas probar debes descargarlo a tu computador, y desde la raiz del direc
   6. Para acceder al programa desde cada dispositivo:
        En la linea de comandos del navegador del computador o dispositivo mobil pones la siguiente instruccion:
        https://192.xxx.xxx:8080 cambiando las xxx por el valor de para acceder a tu IP 
-  8. Empieza a jugar
-  <br>
+  8. Empieza a jugar.
+  <br/>
   <div align = 'center'>
     <img src="https://github.com/GemmaClaverodelMoral/juegomokepon/blob/master/public/assets/mokeponpantallainicio.png">
   </div>
+  Enlace al video demostracion:
+  https://youtu.be/jGJeAIJpbDY
+  9. Al acabar apaga las escuchas del servidor con ctrl + C
