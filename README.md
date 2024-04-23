@@ -25,5 +25,5 @@ Si ,o deseas probar debes descargarlo a tu computador, y desde la raiz del direc
   Enlace al video demostracion:
   <br/>
   - [SIMULACION JUEGO MOKEPON] <br/> 
-  - [https://youtu.be/jGJeAIJpbDY](https://youtu.be/t7RxgL8aQxs) <br/>
+  - https://youtu.be/jGJeAIJpbDY](https://youtu.be/t7RxgL8aQxs) <br/>
   9. Al acabar, desde la linea de comandos del terminal, apaga las escuchas del servidor con ctrl + C. 
