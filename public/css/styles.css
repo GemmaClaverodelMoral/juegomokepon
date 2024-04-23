@@ -1,0 +1,338 @@
+/* https://colorhunt.co/ Paletas de colores RGB #99C35F*/
+/* fonts.google.com  - tipos de letra*/ 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face {
+    font-family: 'PokemonFont';
+    src: url('fonts/Pokemon-Solid.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'PokemonFont2';
+    src: url('fonts/Pokemon-Hollow.ttf') format('truetype');
+}
+
+/****** E L E C C I O N   D E   M A S C O T A ******/
+
+body, html {
+    font-family: "Poppins";
+    margin:0;
+}
+body {
+    background-color: grey;
+    display:flex;
+    justify-content: center;
+}
+p {
+    margin:0;
+}
+.visible-flex {
+    visibility: visible;
+    display: flex;
+}
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+#seleccionar-mokepon {
+    background-image: url('../assets/elegir-mokepon.jpg');
+    background-size:cover;
+    position: fixed;
+    overflow: auto;
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+}
+.titulos {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.titulo {
+    font-family: 'PokemonFont', sans-serif;
+    color: #FFC436;
+    font-size: 5vw;
+    line-height: 1;
+    text-shadow: 
+    -8px -2px 0 #000,  
+    2px -2px 0 #000,
+    -8px 2px 0 #000,
+    2px 2px 0 #000; /* Borde negro de 1px utilizando sombras */
+}
+
+.subtitulo-prefijo {
+    font-family: 'PokemonFont2', sans-serif;
+    color: black;
+    font-size: 3vw;
+    text-shadow: 
+    -2px -2px 10px #ffdd94,  
+    2px -2px 10px #ffdd94,
+    -2px 2px 10px #ffdd94,
+    2px 2px 10px #ffdd94; /* Borde negro de 1px utilizando sombras */
+}
+.subtitulo-mokepon-elegido {
+    font-family: 'PokemonFont', sans-serif;
+    font-size: 3vw;
+    -webkit-text-stroke: 1px solid black;
+    text-shadow: 
+    -2px -2px 0 #000,  
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000; /* Borde negro de 1px utilizando sombras */
+}
+#contenedor-targetas {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:5%;
+    width: 85%;
+    padding:0;
+    top:0;
+    left:0;
+}
+.targeta-mokepon {
+    color:#ffdd94;
+    width: 100%;
+    max-width: 200px;
+    height: auto;/*Evita que la imagen se deforme*/
+    background-size:contain;
+    font-size: 1.5vw;
+    background-color: #1f417c;
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; 
+    border:2px solid #7ad7f1;
+}
+.targeta-mokepon:hover {
+    transform: scale(1.20);
+    transition: transform 0.5s ease;
+}
+.targeta-mokepon img {
+    width:40%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+#img-cen:hover {
+    transform: scale(1.5) translate(0px, 5px);
+}
+.targeta-mokepon img:not(:hover) {
+    transform: scale(1);
+    transition: transform 0.5s ease;
+}
+input {
+    display:none; /* Para que la bolita no se vea y tan solo haya que hacer click en el label para elegir*/
+}
+input:checked + label {
+    background-color: #7ad7f1;
+    color:#1f417c;
+    border:2px solid #1f417c;
+}
+#div-iniciar-batalla {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+     /* Ajustar la imagen al tamaño del botón */
+}
+#img-iniciar-batalla {
+    width: 30vw;
+    max-width: 100px;
+    margin: 20px 0;
+    transition: transform 1s ease, filter 1s ease; 
+} 
+#img-iniciar-batalla:hover {
+   filter: drop-shadow(0px 0px 30px #faed03); 
+   transform: scale(0.8);
+}
+#img-iniciar-batalla:not(:hover) {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0))
+}
+#img-iniciar-batalla:active {
+    transform: scale(0.8);
+}
+
+/******  A T A Q U E S  ******/
+
+#batalla {
+    position: fixed;/*sin esto no se ve el video*/
+    width: 100vw;
+    height: 100vh;
+    color: black;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow:auto;
+}
+#contenedor-botones-ataque {
+    display:flex;
+    gap:10px;
+    justify-content: space-between;
+}
+.boton-ataque { /*ESta clase es img*/
+    background-color: transparent; /* Fondo transparente para que se vea el fondo de la pantalla */
+    cursor: pointer; 
+    font-family: 'Poppins', sans-serif;
+    width: 15vw;
+    max-width: 100px;
+    height: auto;
+    transition: opacity 0.3s ease;
+}
+.boton-ataque.disabled {
+    opacity: 0.5; /* Opacidad reducida para imágenes deshabilitadas */
+    pointer-events: none;
+}
+.boton-ataque:hover{
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0));
+}
+.boton-ataque:active{
+    transform: translateY(2px);
+}
+#mensajes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #7ad7f1;
+    padding: 2%;
+    margin: 2%;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: 'Poppins',sans-serif;
+    border: 4px solid #f5e905;;
+}
+#batalla-resultados {
+    /*position: absolute;*/
+    bottom: 10px; /* Ajusta la posición vertical según tu diseño */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+}
+#boton-reiniciar {
+    border:none;
+    color:#1f417c;
+    background-color: transparent;
+    cursor:pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: transform 0.3s ease;
+}
+#boton-reiniciar:hover {
+    transform: scale(1.2);
+    color: red;
+    font-weight: bold;
+}
+#resultados {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    box-sizing: border-box;
+}
+#barras-victorias{
+    display: flex;
+}
+#victorias-mokepon-jugador, #victorias-mokepon-oponente {
+    font-size: 50px;
+    font-weight: 800;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+#eleccion-mokepones {
+    display:flex;
+    gap: 10px;
+}
+#eleccion-mokepon-jugador, #eleccion-mokepon-oponente {
+    font-size: 4vw;
+    font-weight: 800;
+}
+#tipo-ataques {
+    display: grid;
+    grid-template-columns: 120px 80px 80px;
+    color:white;
+    overflow-y: scroll;
+    width: 300px;
+    height: 80px;
+    background-color: black;
+   
+}
+#ataques-del-jugador, #ataques-del-oponente, #numero-asalto {
+    display: flex;
+    font-size: 10px;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin:0;
+    padding: 0;
+    justify-content:center;
+}
+#batalla-video {
+    position: fixed;/*para que quede por debajo del resto*/
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    z-index: -1; /* Coloca el video detrás de otros elementos */
+}
+
+/******  M A P A  ******/
+
+#ver-mapa{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#mapa{
+    background-color: #7ad7f1;
+    color:#1f417c;
+    border:2px solid #1f417c;
+}
+#botones-movimientos{
+    display:flex;
+    margin-top:10px;
+}
+#botones-movimientos {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+#botones-movimientos button {
+    color:#ffdd94;
+    width: 80px;
+    height: 30px;
+    gap:5px;
+    background-size:contain;
+    font-size: 15px;
+    background-color: #1f417c;
+    border-radius: 10px;
+    cursor: pointer; 
+    border:2px solid #7ad7f1;
+}
+#botones-izq-der{
+    display:flex;
+}
+
+@media (max-width: 600px){
+    #contenedor-targetas {
+        flex-direction: column;
+        align-items: center;
+    }
+    .targeta-mokepon {
+        height: 30%;
+        max-width: 200px;
+        font-size: 4vw;
+    }
+    .titulo {
+        font-size: 10vw;
+    }
+    .subtitulo {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 0;
+    }
+    .subtitulo-prefijo, .subtitulo-mokepon-elegida{
+        font-size: 6vw;
+        line-height: 1.5;
+    }
+}

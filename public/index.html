@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ES">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M O K E P O N</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+<section id="seleccionar-mokepon" class="visible-flex">
+    <div class="titulos">
+        <span class="titulo">MoKépom</span>
+        <div class="subtitulo">
+            <span class="subtitulo-prefijo">Selecciona tu mokepon</span><span class="subtitulo-mokepon-elegido"></span>
+        </div>
+    </div>
+    <div id = "contenedor-targetas">
+    </div>
+    <div id ="div-iniciar-batalla"><img src="./assets/boton-transparente.png"  id="img-iniciar-batalla" alt="Boton Iniciar">
+    </div>
+</section>
+<section id="ver-mapa" class="hidden">
+    <div class="titulos">
+        <span class="titulo">MoKépom</span>
+        <div class="subtitulo">
+            <span class="subtitulo-prefijo">Pelearas con ...</span>
+        </div>
+    </div>
+    <canvas id="mapa"></canvas>
+    <div id="botones-movimientos">
+        <button  onmousedown  ="moverArriba()"  
+                 ontouchstart ="moverArriba()"  
+                 ontouchend   ="detenerMovimiento()" 
+                 onmouseup    ="detenerMovimiento()">Arriba</button> 
+        <div id="botones-izq-der">
+            <button  onmousedown  ="moverIzquierda()" 
+                     ontouchstart ="moverIzquierda()"  
+                     ontouchend   ="detenerMovimiento()" 
+                     onmouseup    ="detenerMovimiento()">Izquierda</button>
+            <button  onmousedown  ="moverDerecha()"   
+                     ontouchstart ="moverDerecha()"  
+                     ontouchend   ="detenerMovimiento()" 
+                     onmouseup    ="detenerMovimiento()">Derecha</button>
+        </div>
+        <button  onmousedown  ="moverAbajo()"     
+                 ontouchstart ="moverAbajo()"  
+                 ontouchend   ="detenerMovimiento()"
+                 onmouseup    ="detenerMovimiento()">Abajo</button>
+    </div>
+</section>
+<section id="batalla" class="hidden">
+    <div class="titulos">
+        <span class="titulo">Moképom</span>
+        <span class="subtitulo subtitulo-prefijo">Selecciona tu ataque</span>
+    </div>
+    <div id="contenedor-botones-ataque">
+    </div>
+    <div id="resultados">
+        <div id="mensajes">
+            <p id="batalla-resultados">! Mucha Suerte !</p>
+            <button id="boton-reiniciar" type="button">Game Over</button>
+        </div>
+        <div id="eleccion-mokepones">
+            <span id="eleccion-mokepon-jugador"></span>
+            <span id="eleccion-mokepon-oponente"></span>
+        </div>
+        <div id="barras-victorias">
+            <span id="victorias-mokepon-jugador">0</span>
+            <span id="victorias-mokepon-oponente">0</span>
+        </div>
+        <div id="tipo-ataques">
+            <div><p id="numero-asalto"></p>
+            </div>
+            <div><p id="ataques-del-jugador"></p>
+            </div>
+            <div><p id="ataques-del-oponente"></p> 
+            </div>
+        </div>
+    </div>
+</section>
+<video id="batalla-video" autoplay muted loop ><source src="./assets/111535-691216380_tiny.mp4" type="video/mp4">Tu navegador no admite videos HTML5.</video>
+<script src="./js/codigo.js"></script>
+</body>
+</html>
